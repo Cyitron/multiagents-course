@@ -14,4 +14,4 @@
  	<-  .print("Pessoa: ", P, " reconhecida no local ", L, " da casa.");
       .send(fechadura, tell, pessoa_presente(P));
       .send(fechadura, tell, local(L));
-      .send(fechadura, achieve, chegada_pessoa).
+      .send(fechadura, achieve, chegada_pessoa(P,L)).

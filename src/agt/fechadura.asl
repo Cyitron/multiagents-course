@@ -9,22 +9,28 @@ pessoa_saindo :- fechada(false) & trancada(false).
   	   	
 +movimento_macaneta <- !verificar_fechada.
 
-+!chegada_pessoa : pessoa_presente("Jonas") & local("frente")
++!chegada_pessoa("Jonas", "frente")
 	<- .print("camera reconheceu o dono da casa chegando.");
 		!abrir_porta;
 		.send(ar_condicionado, achieve, climatizar);
 		.send(lampada, achieve, ligar_lampada);
 		.send(cortina, achieve, fechar_cortina).
 
-+!chegada_pessoa : pessoa_presente(_) & local(_)
-	<- !saida_pessoa.
++!chegada_pessoa(P,L) : pessoa_presente(_) & local(_)
+	<- !saida_pessoa(P,L).
 
 
-+!saida_pessoa : pessoa_presente("Jonas") & local("sala") & pessoa_saindo
-	<- 	.send(cortina, achive, abrir_cortina);
-		.send(lampada, achive, desligar_lampada).
++!saida_pessoa("Jonas", "sala") : trancada(false) & fechada(false)
+	<- 	.send(cortina, achieve, abrir_cortina);
+		.send(lampada, achieve, desligar_lampada);
+		.send(ar_condicionado, achieve, casa_vazia);
+		.wait(10000);
+		.send(fechadura, achieve, fechar_porta).
 
-+!saida_pessoa : pessoa_presente(_) & local(_)
++!saida_pessoa("Jonas", "sala") : trancada(_) & fechada(_)
+	<- .print("Jonas na sala, mas nao esta saindo de casa.").
+
++!saida_pessoa(P,L) : pessoa_presente(_) & local(_)
 	<- .print("nao sei que pessoa é essa.");
 		!trancar_porta;
 		.print("enviando alerta para a policia!").

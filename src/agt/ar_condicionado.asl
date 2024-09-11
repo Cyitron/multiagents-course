@@ -65,4 +65,6 @@ temperatura_de_preferencia(jonas,23).
  	<- 	.print("Não foram implementadas outras opções.");
  		.print("Temperatura regulada.").
 
-
++!casa_vazia
+	<- 	desligar;
+		.print("ar condicionado desligado").

@@ -11,4 +11,7 @@
 +closed  <-  .print("Close event from GUIInterface").
    
  +!verificar_pessoa: pessoa_presente(P) & local(L)
- 	<-  .print("Pessoa: ", P, " reconhecida no local ", L, " da casa.").
+ 	<-  .print("Pessoa: ", P, " reconhecida no local ", L, " da casa.");
+      .send(fechadura, tell, pessoa_presente(P));
+      .send(fechadura, tell, local(L));
+      .send(fechadura, achieve, chegada_pessoa).

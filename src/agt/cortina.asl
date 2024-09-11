@@ -3,8 +3,8 @@
 
 +!inicializar_cortina
   <- 	makeArtifact("cortina_quarto","artifacts.Cortina",[],D);
-  	   	focus(D);
-  	   	!abrir_cortina.
+  	   	focus(D).
+  	   	//S!abrir_cortina.
   	   	
 +ajuste_cortina 
   <-  !!verificar_ajuste.
@@ -17,5 +17,11 @@
  +!abrir_cortina: nivel_abertura(N) 
  	<-  .print("Nível de abertura ANTES: ", N);
  		abrir;
+ 		?nivel_abertura(ND);
+ 		.print("Nível de abertura DEPOIS: ", ND).
+
+ +!fechar_cortina: nivel_abertura(N) 
+ 	<-  .print("Nível de abertura ANTES: ", N);
+ 		fechar;
  		?nivel_abertura(ND);
  		.print("Nível de abertura DEPOIS: ", ND).

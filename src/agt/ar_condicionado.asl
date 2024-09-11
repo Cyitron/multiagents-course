@@ -2,24 +2,32 @@
 
 /* Initial beliefs and rules */
 
-temperatura_de_preferencia(jonas,25).
+temperatura_de_preferencia(jonas,23).
+
+// exemplo(X) :- condicao1(Y) & X-Y.
 
 /* Initial goals */
 
 !inicializar_AC.
 
+// !exemplo.
+
+/* plans */
+
+// +!exemplo: exemplo(X) <- o que fazer.
+
 +!inicializar_AC
   <- 	makeArtifact("ac_quarto","artifacts.ArCondicionado",[],D);
   	   	focus(D);
-  	   	!definir_temperatura;
-  	   	!!climatizar.
+  	   	!definir_temperatura.
+  	   	//!!climatizar.
 
 +alterado : temperatura_ambiente(TA) & temperatura_ac(TAC)
   <-  .drop_intention(climatizar);
   	  .print("Houve interação com o ar condicionado!");
   	  .print("Temperatura Ambiente: ", TA);
- 	  .print("Temperatura Desejada: ", TAC);
-  	  !!climatizar.
+ 	  .print("Temperatura Desejada: ", TAC).
+  	  //!!climatizar.
       
 +closed  <-  .print("Close event from GUIInterface").
    

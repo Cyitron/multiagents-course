@@ -1,10 +1,9 @@
-
 !inicializar_lampada.
 
 +!inicializar_lampada
   <- 	makeArtifact("lampada_quarto","artifacts.Lampada",[],D);
-  	   	focus(D);
-  	   	!ligar_lampada.
+  	   	focus(D).
+  	   	//!ligar_lampada.
   	   	
 +interuptor 
   <-  !!verificar_lampada.
@@ -20,3 +19,10 @@
  +!ligar_lampada
  	<-  ligar;
  		.print("Liguei a Lâmpada!").
+
++!desligar_lampada : ligada(false)
+	<-	.print("lampada já desligada.").
+
++!desligar_lampada : ligada(true)
+	<-	desligar;
+		.print("lampada desligada.").

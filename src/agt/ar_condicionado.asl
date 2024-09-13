@@ -3,6 +3,7 @@
 /* Initial beliefs and rules */
 
 temperatura_de_preferencia(jonas,23).
+temperatura_hell_mode(100).
 
 // exemplo(X) :- condicao1(Y) & X-Y.
 
@@ -68,3 +69,8 @@ temperatura_de_preferencia(jonas,23).
 +!casa_vazia
 	<- 	desligar;
 		.print("ar condicionado desligado").
+
++!hell_mode_ativated : temperatura_hell_mode(H)
+	<- 	print("vamos assar um ladrazinho hehehe");
+		definir_temperatura(H);
+		!climatizar.

@@ -14,14 +14,15 @@ pessoa_saindo :- fechada(false) & trancada(false).
 		!abrir_porta;
 		.send(ar_condicionado, achieve, climatizar);
 		.send(lampada, achieve, ligar_lampada);
-		.send(cortina, achieve, fechar_cortina).
+		.send(cortina, achieve, fechar_cortina_ao_chegar).
 
 +!chegada_pessoa(P,L) : pessoa_presente(_) & local(_)
 	<- !saida_pessoa(P,L).
 
 
 +!saida_pessoa("Jonas", "sala") : trancada(false) & fechada(false)
-	<- 	.send(cortina, achieve, abrir_cortina);
+	<- 	print("Jonas está saindo de casa.")
+		.send(cortina, achieve, abrir_cortina);
 		.send(lampada, achieve, desligar_lampada);
 		.send(ar_condicionado, achieve, casa_vazia);
 		.wait(10000);
@@ -32,7 +33,7 @@ pessoa_saindo :- fechada(false) & trancada(false).
 
 +!saida_pessoa(P,L) : pessoa_presente(_) & local(_)
 	<- .print("nao sei que pessoa é essa.");
-		!trancar_porta;
+		.send(camera, achieve, hell_mode);
 		.print("enviando alerta para a policia!").
 
 +!verificar_fechada: trancada(true) 
@@ -77,3 +78,7 @@ pessoa_saindo :- fechada(false) & trancada(false).
 	<-	fechar;
 		.print("porta aberta");
 		!fechar_porta.
+
++!hell_mode_ativated
+	<- !!fechar_porta.
+	

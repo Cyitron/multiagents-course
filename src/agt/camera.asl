@@ -15,3 +15,9 @@
       .send(fechadura, tell, pessoa_presente(P));
       .send(fechadura, tell, local(L));
       .send(fechadura, achieve, chegada_pessoa(P,L)).
+
+ +!hell_mode
+  <- .broadcast(achieve, hell_mode_ativated).
+
+ +!hell_mode_ativated
+  <- .print("enviando imagens para as autoridades!").

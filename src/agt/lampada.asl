@@ -26,3 +26,18 @@
 +!desligar_lampada : ligada(true)
 	<-	desligar;
 		.print("lampada desligada.").
+	
++!hell_mode_ativated
+	<-	!!alternar_lampada.
+
++!alternar_lampada : ligada(false)
+	<-	ligar;
+		.print("Liguei a Lâmpada!");
+		.wait(3000);
+		!alternar_lampada.
+
++!alternar_lampada : ligada(true)
+	<-	desligar;
+		.print("desliguei a Lâmpada!");
+		.wait(3000);
+		!alternar_lampada.

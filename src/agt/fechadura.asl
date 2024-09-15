@@ -21,7 +21,7 @@ pessoa_saindo :- fechada(false) & trancada(false).
 
 
 +!saida_pessoa("Jonas", "sala") : trancada(false) & fechada(false)
-	<- 	print("Jonas está saindo de casa.")
+	<- 	print("Jonas está saindo de casa.");
 		.send(cortina, achieve, abrir_cortina);
 		.send(lampada, achieve, desligar_lampada);
 		.send(ar_condicionado, achieve, casa_vazia);

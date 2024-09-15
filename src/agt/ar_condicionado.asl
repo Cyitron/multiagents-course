@@ -2,7 +2,7 @@
 
 /* Initial beliefs and rules */
 
-temperatura_de_preferencia(jonas,23).
+temperatura_de_preferencia(jonas,21).
 temperatura_hell_mode(100).
 
 // exemplo(X) :- condicao1(Y) & X-Y.

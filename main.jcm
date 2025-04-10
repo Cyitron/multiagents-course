@@ -20,8 +20,11 @@ mas main {
     // agent cortina: cortina.asl
     // agent lampada: lampada.asl
     // agent fechadura: fechadura.asl
-    agent aspirador: aspirador.asl
 
+    agent john: aspirador1.asl{
+      beliefs: posicao(le), ~sujo(ld), sujo(le)
+      goals: limpar_ambiente
+    }
 
     workspace w {
       artifact c1: example.Counter(3) 

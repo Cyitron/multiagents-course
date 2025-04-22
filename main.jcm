@@ -21,10 +21,25 @@ mas main {
     // agent lampada: lampada.asl
     // agent fechadura: fechadura.asl
 
-    agent john: aspirador1.asl{
-      beliefs: posicao(le), ~sujo(ld), sujo(le)
-      goals: limpar_ambiente
+    agent Peter: processor_core.asl{   // agente do core prinpical
+      beliefs:
+      goals:
     }
+
+    // agent Saphira: add_p.asl{         // agente de soma
+    //   beliefs:
+    //   goals:
+    // }
+
+    // agent Maria: mult_p.asl{          // agente de multiplicacao
+    //   beliefs:
+    //   goals:
+    // }
+
+    // agent Alison: acc_p.asl{          // agente de acumulacao
+    //   beliefs:
+    //   goals:
+    // }
 
     workspace w {
       artifact c1: example.Counter(3) 

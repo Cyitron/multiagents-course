@@ -20,23 +20,24 @@ mas main {
     // agent cortina: cortina.asl
     // agent lampada: lampada.asl
     // agent fechadura: fechadura.asl
+    // agent test: test.asl
 
-    agent Peter: processor_core.asl{   // agente do core prinpical
-      beliefs:
-      goals:
+    agent peter: processor_core.asl{   // agente do core prinpical
+      beliefs: calcula("4+2*2")
+      goals: calcular
     }
 
-    // agent Saphira: add_p.asl{         // agente de soma
+    // agent saphira: add_p.asl{         // agente de soma
     //   beliefs:
     //   goals:
     // }
 
-    // agent Maria: mult_p.asl{          // agente de multiplicacao
+    // agent maria: mult_p.asl{          // agente de multiplicacao
     //   beliefs:
     //   goals:
     // }
 
-    // agent Alison: acc_p.asl{          // agente de acumulacao
+    // agent alison: acc_p.asl{          // agente de acumulacao
     //   beliefs:
     //   goals:
     // }

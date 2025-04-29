@@ -12,16 +12,12 @@
         R = P * D;
         .print("o resultado da multiplicacao é ", R);
         .term2string(R, T);
-        //.wait(1000);
         .delete(A-1, A+2, X, N); // .delete("2*3","1+2*3",N): S unifies with "bnn".
         .print("Printa a exclusao da multiplicacao ", N);
         .concat(N,T,L); // .concat("a", "b", "c", "d", X): X unifies with "abcd".
         .print("nova string: ", L);
         -calcula(X);
         +calcula(L);
-        // remover a crenca
-        // remover a operacao calculada
-        //acrescentar o novo numero
         !calcular.
 
 +!calcular: calcula(X) & .string(X) & .substring("+", X, A)
@@ -37,16 +33,12 @@
         R = P + D;
         .print("o resultado da soma é ", R);
         .term2string(R, T);
-        //.wait(1000);
         .delete(A-1, A+2, X, N); // .delete("2*3","1+2*3",N): S unifies with "bnn".
         .print("Printa a exclusao da soma ", N);
         .concat(N,T,L); // .concat("a", "b", "c", "d", X): X unifies with "abcd".
         .print("nova string: ", L);
         -calcula(X);
         +calcula(L);
-        // remover a crenca
-        // remover a operacao calculada
-        //acrescentar o novo numero
         !calcular.
 
 +!calcular: calcula(X)

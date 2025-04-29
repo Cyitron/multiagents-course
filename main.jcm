@@ -23,7 +23,7 @@ mas main {
     // agent test: test.asl
 
     agent peter: processor_core.asl{   // agente do core prinpical
-      beliefs: calcula("4+2*2")
+      beliefs: calcula("4+2*2"), calcula("1+2*3")
       goals: calcular
     }
 

@@ -11,6 +11,28 @@
 
 mas main {
 
+  //agente de linguas portugues, ingles, espanhol, alemao, italiano
+    agent portugues: portugues.asl {
+      beliefs: sei_falar(portugues)
+      goals: cumprimentar, aprenda
+    }
+
+    agent ingles: ingles.asl {
+      beliefs: sei_falar(ingles)
+    }
+
+    agent espanhol: espanhol.asl {
+      beliefs: sei_falar(espanhol)
+    }
+
+    agent alemao: alemao.asl {
+      beliefs: sei_falar(alemao)
+    }
+
+    agent italiano: italiano.asl {
+      beliefs: sei_falar(italiano)
+    }
+
     // agent bob: sample_agent.asl {
     //   focus: w.c1 
     // }
@@ -22,10 +44,10 @@ mas main {
     // agent fechadura: fechadura.asl
     // agent test: test.asl
 
-    agent peter: processor_core.asl{   // agente do core prinpical
-      beliefs: calcula("4+2*2"), calcula("1+2*3")
-      goals: calcular
-    }
+    // agent peter: processor_core.asl{   // agente do core prinpical
+    //   beliefs: calcula("4+2*2"), calcula("1+2*3")
+    //   goals: calcular
+    // }
 
     // agent saphira: add_p.asl{         // agente de soma
     //   beliefs:
